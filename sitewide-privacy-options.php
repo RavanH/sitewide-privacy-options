@@ -1,13 +1,12 @@
 <?php
 /*
-Plugin Name: Multisite Privacy
-Plugin URI: http://premium.wpmudev.org/project/sitewide-privacy-options-for-wordpress-mu/
+Plugin Name: Sitewide Privacy Options
+Plugin URI: https://status301.net/wordpress-plugins/sitewide-privacy-options/
 Description: Adds more levels of privacy and allows you to control them across all sites - or allow users to override them.
-Author: WPMU DEV
-Author URI: http://premium.wpmudev.org
-Version: 1.1.9
+Author: RavanH
+Author URI: https://status301.net
+Version: 1.2-alpha1
 Network: true
-WDP ID: 52
 License: GNU General Public License (Version 2 - GPLv2)
 */
 
@@ -15,6 +14,9 @@ License: GNU General Public License (Version 2 - GPLv2)
 Copyright 2009-2014 Incsub (http://incsub.com)
 Author - S H Mohanjith
 Contributors - Ivan Shaovchev, Andrew Billits, Andrey Shipilov, S H Mohanjith
+
+Copyright 2023 RavanH (https://status301.net)
+Author - RavanH
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License (Version 2 - GPLv2) as published by
@@ -308,7 +310,7 @@ if ( $current_blog->public == '-4' && isset( $_GET['privacy'] ) && '4' == $_GET[
             if ( trim($_POST['pwd']) == trim($spo_settings['blog_pass']) ) {
                 $value = wp_hash( get_current_blog_id() . $spo_settings['blog_pass'] . 'blogaccess yes' );
                 setcookie( 'spo_blog_access', $value, time() + 1800, $current_blog->path );
-                
+
                 if ( isset($dm_map) && is_object($dm_map) && preg_match("/{$current_blog->domain}\\{$current_blog->path}/", $redirect_to) == 0 ) {
                     $redirect_old = $redirect_to;
                     $redirect_new = add_query_arg("redirect_to", $redirect_old, $redirect_old);
@@ -603,9 +605,9 @@ function additional_privacy_set_default($blog_id, $user_id) {
     	if ( empty( $privacy_default ) || ! in_array( $privacy_default, $allowed_public_vals ) ) {
         	return;
     	}
-    
+
     	if ( get_blog_option( $blog_id, "blog_public", 2 ) != $privacy_default ) {
-        	update_blog_option( $blog_id, "blog_public", $privacy_default );		
+        	update_blog_option( $blog_id, "blog_public", $privacy_default );
         	update_blog_status( $blog_id, "public", $privacy_default );
     	}
 }
@@ -924,14 +926,3 @@ function additional_privacy_site_admin_options() {
     <?php
 }
 
-/* Update Notifications Notice */
-if ( !function_exists( 'wdp_un_check' ) ) {
-    function wdp_un_check() {
-        if ( !class_exists('WPMUDEV_Update_Notifications') && current_user_can('edit_users') )
-            echo '<div class="error fade"><p>' . __('Please install the latest version of <a href="http://premium.wpmudev.org/project/update-notifications/" title="Download Now &raquo;">our free Update Notifications plugin</a> which helps you stay up-to-date with the most stable, secure versions of WPMU DEV themes and plugins. <a href="http://premium.wpmudev.org/wpmu-dev/update-notifications-plugin-information/">More information &raquo;</a>', 'wpmudev') . '</a></p></div>';
-    }
-    add_action( 'admin_notices', 'wdp_un_check', 5 );
-    add_action( 'network_admin_notices', 'wdp_un_check', 5 );
-}
-
-?>

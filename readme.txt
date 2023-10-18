@@ -1,5 +1,14 @@
-=== Multisite Privacy ===
-Authors: Ivan Shaovchev, Andrew Billits, Andrey Shipilov (Incsub), S H Mohanjith (Incsub)
+=== Sidewide Privacy Options ===
+Authors: Ivan Shaovchev, Andrew Billits, Andrey Shipilov (Incsub), S H Mohanjith (Incsub), RavanH
+Contributors: RavanH
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ravanhagen%40gmail%2ecom&item_name=Multisite%20Privacy%20Options
+Tags: privacy, multisite
+Requires at least: 4.4
+Requires PHP: 5.6
+Tested up to: 6.3
+Stable tag: 5.3.3
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
@@ -15,7 +24,7 @@ to complete the update
 = 1.1.8.5 =
 * Fixed: Fix HTML standard (for attribute added in label tag)
 
-= 1.1.8.4 = 
+= 1.1.8.4 =
 * Fixed: Do not display privacy options at sign up if override is disabled
 
 = 1.1.8.3 =
@@ -115,7 +124,7 @@ to complete the update
 * Display privacy options on page of new blog creation;
 * Fixed problem with error message when selected "...provide this password" method of privacy;
 * Fixed problem of privacy;
-* Compatibility with all mobile WordPress apps; 
+* Compatibility with all mobile WordPress apps;
 
 = 1.0.9 =
 * fixed problem with Wordpress iOS App;
