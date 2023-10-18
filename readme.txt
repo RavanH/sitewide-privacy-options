@@ -1,7 +1,7 @@
 === Sidewide Privacy Options ===
 Authors: Ivan Shaovchev, Andrew Billits, Andrey Shipilov (Incsub), S H Mohanjith (Incsub), RavanH
 Contributors: RavanH
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ravanhagen%40gmail%2ecom&item_name=Multisite%20Privacy%20Options
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ravanhagen%40gmail%2ecom&item_name=Multisite%20Privacy
 Tags: privacy, multisite
 Requires at least: 4.4
 Requires PHP: 5.6
@@ -10,7 +10,45 @@ Stable tag: 5.3.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
+Multisite Privacy adds network-wide privacy levels and allows you to decide whether users can override them.
+
+
+== Description ==
+
+Multisite Privacy gives you more control without the hassle and complexity of a full Membership plugin.
+
+*   Adds four new privacy options to Settings > Privacy in the site admin dashboard.
+*   Choice of which privacy options are made available to your users!
+*   Hassle free interface.  Changing privacy across your network is as simple as updating your settings in the network admin dashboard.
+*   Ability to let users select their preferred privacy option when signing up for their new site.
+*   Control the default privacy setting of all new sites created on your network.
+*   Easily update the privacy settings of all site across your entire network at the same time!
+*   Control users ability to override default privacy settings
+*   Works perfectly with Multisite and BuddyPress.
+*   Use this plugin on any WordPress project you like.
+
+Here's your four new privacy options:
+
+1.  Allow any registered users on the network to view site.
+2.  Allow only subscribers or users of the site to view it.
+3.  Allow access to only administrators of the site - great for testing purposes.
+4.  Require a single password to access the site - allowing only those you want to view the site but without the need for them to have a user account!
+
+
+== Frequently Asked Questions ==
+
+
+
+== Upgrade Notice ==
+
+= 1.2 =
+Revival of the old WPMUDEV Multisite Privacy plugin: removal of old WPMUDEV dependancies, WP 6+ compatibility fixes
+
 == Changelog ==
+
+= 1.2 =
+TODO consider dropping Pro Sites, Domain Mapping compatibility
+* Remove old WPMUDEV dependencies
 
 = 1.1.9 =
 * Fix: When the Update all sites option selected, any admin link will redirect
